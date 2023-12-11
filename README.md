@@ -4,8 +4,9 @@ send MQTT to RPI broker</br>
 there Node-Red SQLite db trends data</br>
 
 BLOG info</br>
-[summary][http://kll.byethost7.com/kllfusion01/infusions/articles/articles.php?article_id=218]</br>
-[new work][http://kll.byethost7.com/kllfusion01/infusions/articles/articles.php?article_id=225]</br>
+[summary](http://kll.byethost7.com/kllfusion01/infusions/articles/articles.php?article_id=218)
+
+[new work](http://kll.byethost7.com/kllfusion01/infusions/articles/articles.php?article_id=225)
 
 v1.2.3 e
 _______________________________

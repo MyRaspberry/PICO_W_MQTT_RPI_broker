@@ -1,0 +1,12 @@
+{
+    "name": "PICO_W",
+    "description": "use a RPI PICO W as mqtt source device",
+    "version": "0.0.1",
+    "dependencies": {},
+    "node-red": {
+        "settings": {
+            "flowFile": "flows.json",
+            "credentialsFile": "flows_cred.json"
+        }
+    }
+}

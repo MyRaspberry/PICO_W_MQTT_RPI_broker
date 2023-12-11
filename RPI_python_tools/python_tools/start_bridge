@@ -1,0 +1,25 @@
+#!/bin/bash
+#                        !/bin/sh
+# filename: start_bridge
+# to start py mqtt bridge service
+MYPATH='/home/pi/projects/PICO_W/python_tools/'
+
+echo 'try auto-start Python APP for RPI feed LOCAL to  REMOTE MQTT broker'
+echo 'wait 30s ( for RPI mosquitto broker ready)'
+env sleep 10s
+echo '20s'
+env sleep 10s
+echo '10s'
+env sleep 10s
+
+# change using: venv source
+MYPATH='/home/pi/projects/PICO_W/'
+cd $MYPATH
+source /home/pi/projects/PICO_W/env/bin/activate
+
+MYPATH='python_tools'
+cd $MYPATH
+
+echo 'start python bridge service'
+
+python remote_client_bridge.py

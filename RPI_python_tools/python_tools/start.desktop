@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Name=BRIDGE_Service_start
+Name[en_GB]=BRIDGE_Service_start
+Comment='Python 3 MQTT REMOTE BRIDGE '
+Exec=lxterminal -e '/home/pi/projects/PICO_W/python_tools/start_bridge'
+Icon=kll_favicon.png
+Terminal=false
+Type=Application
+Categories=Utility;KLL;
+StartupNotify=true

@@ -8,5 +8,10 @@ BLOG info</br>
 
 [new work](http://kll.byethost7.com/kllfusion01/infusions/articles/articles.php?article_id=225)
 
-v1.2.3 e
+## v1.2.3 e
+_______________________________
+
+there is more work, to update the CP802 to current CP829 or CP900a5</br>
+but that failed for changes in http_server and minimqtt libs</br>
+insofar a broken project
 _______________________________

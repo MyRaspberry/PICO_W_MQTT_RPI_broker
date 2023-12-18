@@ -1,0 +1,103 @@
+# new CP800 secrets file
+# use:
+# VariableTXT="myVariable"
+# VariableINT=42
+# VariableBOOL=1
+# and in code.py use:
+# import os
+# VariableTXT = os.getenv('VariableTXT')
+# VariableINT = os.getenv('VariableINT')
+# VariableBOOL = bool(os.getenv('VariableBOOL'))
+# see more: https://docs.circuitpython.org/en/latest/docs/environment.html
+
+# loaded to PICO W circuit python drive
+# 5.1.2023 REMOTE broker with TLS OK
+# 16.1.2023 new httpserver from CP800b6 update
+# 17.1.2023 picow 2 as 214
+# 23.1.2023 nuke / use latest / back 213 / local like remote topic...
+# 28.1.2023 add many useXXX switches over many x.py files
+# 30.1.2023 nuke and use CP800RC1 so change 1.1.3 to 1.2.3 ( and test as P214 ) here P213
+# 01.2.2023 update CP800RC1 to 30.1 and update pms1w ( from 1.0.4 version )
+# 07.2.2023 CP800
+# 16.2.2023 CP802 ( still same minimqtt lib problem with TLS )
+# 18.2.2023 V1.2.3 c : NTC to RTC to MQTT
+# 19.2.2023 V1.2.3 d : CP802 ++
+# copy as V123d_INA50V01 and .215
+# 1.12.2023 V1.2.3 e : workover new blog
+
+THIS_REVISION = "v1.2.3e"
+THIS_OS = " CP802++"
+# __________________________________________________ LAN WIFI
+WIFI_SSID = "___SSID___"
+WIFI_PASSWORD = "___PASS___"
+# __________________________________________________ LOCATION TIME ZONE
+useNTP = 1 # _______________________________________ try NTP to RTC update
+TZ_OFFSET = 7 # ____________________________________ LOCATION TIME ZONE
+
+# __________________________________________________ LOCAL WEB SERVER & 'data'
+WIFI_IP = "192.168.1.215"
+# about use lib adafruit_minimqtt to RPI mosquitto
+# restart project on RPI4 new OS 30.11.2023
+# __________________________________________________ local RPI4 as broker and BRIDGE
+MQTT_broker="192.168.1.104"
+MQTT_port = 1883
+MQTT_user = "uPICOW"
+MQTT_pass = "pPICOW"
+
+# __________________________________________________ TOPIC publish to RPI3:
+MQTT_mtopic="PICOW"
+# now also use /Site1/ as in 'remote_dtopic' inbetween, even not required for LOCAL broker
+MQTT_dtopic="Site1/P215"
+
+MQTT_TLS = "n" # local mosquitto TLS "n"
+
+use_REMOTE_broker = "n"
+
+remote_TLS = "y" # remote broker HIVEMQ TLS "y"
+
+remote_broker="xxx.s2.eu.hivemq.cloud"
+remote_port = 8883
+remote_user = "___USER___"
+remote_pass = "___PASS__"
+
+# __________________________________________________ for mqtt client name and REMOTE TOPIC
+remote_mtopic="PICOW-S31" # ________________________ !! THIS data scheme
+remote_dtopic="Site1" # ____________________________ !! UNIQUE SITE to WWW
+
+# __________________________________________________ move useXXX switches here ( from file: )
+# but must use 0 1 not False True
+# in jobs use: DIAG = bool(os.getenv('DIAG'))
+
+DIAG=1  # __________ jobs: global print diagnostic on off !! overwritten by menu !!
+
+usePICOW=1  # ______ jobs: use CP PICO_W specifix IO code
+# __________________ following jobs can be overwritten temporary by serial menu
+JOB0en=0  # ________ jobs: PICOW_DIO
+update0="0.5" # compare to sec from monotonic as float
+#update0 = float(os.getenv('update0'))
+JOB1en=1  # ________ jobs: PICOW_AIO
+update1=15  # compare to a counter incremented every full second ( but not same loop / millisec ! as this is a task scheduler )
+JOB2en=0  # ________ jobs: DHT
+update2=12
+JOB3en=1  # ________ jobs: INA
+update3=30
+JOB4en=0  # ________ jobs: ADS
+update4=15
+JOB5en=1  # ________ jobs: MQTT
+update5=60
+JOB6en=0  # ________ jobs: USER
+update6=30
+
+useMCC=1  # ________ picow_io: drive DO1 on local PB2 auto ( like  MotorControlCenter hardware would do )
+
+useDHT=0  # ________ dht: sensor DHT22 by 'wire' on pin 1 PICO W
+useINA=1  # ________ ina: enable INA I2C code if connected and used
+useADS=0  # ________ ads: enable ADS I2C code if connected and used
+
+useMQTT=1 # ________ mqtt: enable mqtt broker setup ( local or remote), settings see above ( and try login again and again... )
+hereuse_PICOW_io=0 # mqtt: use picow A0 for Volt and picow A1 for Amp and calc Watt and send to broker
+hereuse_INA=1 # ____ mqtt: use INA Volt Amp Watt and send to broker
+useFilter=0 # ______ mqtt: enable filter V A W to broker
+
+# __________________ PMS1W only
+TESTPWM=1 # ________ pin21 GP16 PWMA0 enable ( 1000Hz, 50% duty cycle)

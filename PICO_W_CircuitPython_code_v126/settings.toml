@@ -34,8 +34,8 @@ THIS_OS = " CP829 "
 useWEB=0
 
 # __________________________________________________ LAN WIFI
-WIFI_SSID = "kll-wlan_2.4G"
-WIFI_PASSWORD = "WELOVEKOH-SAMUI"
+WIFI_SSID = "___SSID___"
+WIFI_PASSWORD = "___PASS___"
 # __________________________________________________ LOCATION TIME ZONE
 useNTP = 1 # _______________________________________ try NTP to RTC update
 TZ_OFFSET = 7 # ____________________________________ LOCATION TIME ZONE
